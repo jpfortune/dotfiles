@@ -19,7 +19,7 @@ linkFile "i3"
 linkFile "tmux.conf"
 
 PACKAGES="curl build-essential cmake python-dev python3-dev ctags golang \
-python-setuptools python3-setuptools python-pip python3-pip flake8"
+python-setuptools python3-setuptools python-pip python3-pip flake8 tmux"
 
 apt-get update
 apt-get install ${PACKAGES} -y
