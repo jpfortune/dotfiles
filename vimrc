@@ -5,6 +5,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 set encoding=utf-8
@@ -15,6 +16,7 @@ inoremap <C-d> import code; code.interact(local = locals())<ESC>
 inoremap <C-e> import sys; sys.exit(0)<ESC>
 inoremap <C-k> ("")<Left><Left>
 inoremap <C-l> [""]<Left><Left> inoremap jk <ESC>
+inoremap jk <ESC>
 inoremap Jk <ESC>
 inoremap JK <ESC>
 noremap <S-r> :w<CR>:!%:p
@@ -93,3 +95,9 @@ if &term =~ '256color'
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+
+" Gutentags
+" Don't load me if there's no ctags file
+"if !executable('ctags')
+"    let g:gutentags_dont_load = 1
+"endif

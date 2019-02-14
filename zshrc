@@ -97,10 +97,13 @@ export LC_ALL=en_US.utf-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # GoFmt options
-export GOROOT=/usr/local/go
+export GOROOT=/usr/bin/go
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin/
 export PATH=$PATH:$GOROOT/bin
+
+# Pipenv
+export PATH=$PATH:$HOME/.local/bin
 
 export TERM="xterm-256color"
 
