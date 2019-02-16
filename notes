@@ -1,0 +1,25 @@
+Install Alacritty (High speed terminal emulator)
+
+
+1. Dependencies
+sudo apt-get install cmake libfreetype6-dev libfontconfig1-dev xclip
+
+2. Get Rust
+sudo curl https://sh.rustup.rs -sSf | sh
+source env file for cargo
+
+3. Install Alacrity
+git clone https://github.com/jwilm/alacritty.git
+cd alacity
+cargo build --release
+
+4. copy binary into path
+cp target/release/alacritty /usr/local/bin
+
+5. add shell completion
+-- zsh shell --
+cp alacritty-completions.zsh /usr/share/zsh/functions/Completion/X/_alacritty
+
+-- bash --
+cp alacritty-completions.bash  ~/.alacritty
+echo "source ~/.alacritty" >> ~/.bashrc

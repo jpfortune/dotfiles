@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'ambv/black'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -6,9 +7,17 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nvie/vim-flake8'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set encoding=utf-8
+
+" Black
+autocmd BufWritePre *.py execute ':Black'
+
+" colorscheme
+colorscheme gruvbox
+set background=dark
 
 " key mappings
 let mapleader=","
@@ -41,7 +50,6 @@ set ttyfast
 set lazyredraw
 
 set backspace=indent,eol,start
-set colorcolumn=80
 set laststatus=2
 
 " multiple vim window nav "
@@ -80,8 +88,8 @@ set hlsearch
 highlight ExtraWhitespace ctermbg=red ctermfg=black guibg=lightgray guifg=black
 match ExtraWhitespace /\s\+$/
 
-highlight OverLength ctermbg=lightgray ctermfg=black guibg=lightgray guifg=black
-2match OverLength /\%>80v.\+/
+"highlight OverLength ctermbg=lightgray ctermfg=black guibg=lightgray guifg=black
+"2match OverLength /\%>80v.\+/
 
 augroup BgHighlight
     autocmd!
